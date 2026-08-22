@@ -72,3 +72,16 @@
 @keyframes introAwayV2 {
   to { opacity: 0; visibility: hidden; transform: scale(1.04); }
 }
+
+.join-popup { position:fixed; z-index:90; inset:0; display:grid; place-items:center; padding:22px; background:rgba(20,7,26,.78); backdrop-filter:blur(12px); animation:joinFade .45s both; }
+.join-popup[hidden] { display:none; }
+.join-card { width:min(92vw,460px); position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center; padding:38px 28px 30px; border:1px solid rgba(255,255,255,.28); border-radius:34px; background:radial-gradient(circle at 50% 0,#7138ef,#3d1750 70%); color:#fff; text-align:center; box-shadow:0 30px 90px rgba(24,5,32,.5); animation:joinPop .55s cubic-bezier(.16,.9,.2,1) both; }
+.join-card::before { content:""; position:absolute; inset:-45% -20% auto; height:70%; background:radial-gradient(circle,rgba(255,180,37,.28),transparent 66%); pointer-events:none; }
+.join-card .spark { width:58px; height:58px; color:var(--gold); filter:drop-shadow(0 0 18px rgba(255,180,37,.55)); }
+.join-kicker { margin-top:12px; color:#d9c9ff; font-size:.68rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+.join-card h2 { margin:10px 0 8px; font:800 clamp(2rem,8vw,3.2rem)/.98 Georgia,serif; }
+.join-card p { margin:5px 0 18px; color:#f1e9f4; font-weight:700; }
+.join-call { display:block; width:100%; padding:15px 18px; border-radius:999px; background:var(--gold); color:#2b1037; font-size:clamp(1.15rem,5vw,1.45rem); font-weight:900; text-decoration:none; box-shadow:0 12px 30px rgba(255,180,37,.3); }
+.join-replay { margin-top:16px; border:0; background:transparent; color:#fff; font-size:.78rem; font-weight:800; cursor:pointer; }
+@keyframes joinFade { from{opacity:0} }
+@keyframes joinPop { from{opacity:0;transform:translateY(28px) scale(.88)} to{opacity:1;transform:none} }
